@@ -19,7 +19,7 @@ function App() {
   // Hàm lấy danh sách đơn hàng từ Backend Node.js
   const fetchOrdersFromBackend = async () => {
     try {
-      const res = await fetch('https://tra-sua.onrender.com/api/orders')
+      const res = await fetch('https://tra-sua-1.onrender.com.com/api/orders')
       const data = await res.json()
       setOrders(data)
     } catch (err) {
@@ -75,7 +75,7 @@ function App() {
     }
 
     try {
-      const res = await fetch('https://tra-sua.onrender.com/api/orders', {
+      const res = await fetch('https://tra-sua-1.onrender.com/api/orders', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(orderData),
@@ -94,7 +94,7 @@ function App() {
   // ĐỔI TRẠNG THÁI ĐƠN HÀNG TRÊN BACKEND
   const toggleOrderStatus = async (orderId) => {
     try {
-      await fetch(`https://tra-sua.onrender.com/api/orders/${orderId}`, { method: 'PUT' })
+      await fetch(`https://tra-sua-1.onrender.com/api/orders/${orderId}`, { method: 'PUT' })
       fetchOrdersFromBackend()
     } catch (err) {
       console.error('Lỗi đổi trạng thái:', err)
@@ -104,7 +104,7 @@ function App() {
   // XÓA ĐƠN HÀNG TRÊN BACKEND
   const deleteOrder = async (orderId) => {
     try {
-      await fetch(`https://tra-sua.onrender.com/api/orders/${orderId}`, { method: 'DELETE' })
+      await fetch(`https://tra-sua-1.onrender.com/api/orders/${orderId}`, { method: 'DELETE' })
       fetchOrdersFromBackend()
     } catch (err) {
       console.error('Lỗi xóa đơn:', err)
