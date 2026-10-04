@@ -19,7 +19,7 @@ function App() {
   // Hàm lấy danh sách đơn hàng từ Backend Node.js
   const fetchOrdersFromBackend = async () => {
     try {
-      const res = await fetch('https://tra-sua-1.onrender.com.com/api/orders')
+      const res = await fetch('https://tra-sua-1.onrender.com/api/orders')
       const data = await res.json()
       setOrders(data)
     } catch (err) {
